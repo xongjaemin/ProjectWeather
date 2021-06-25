@@ -13,6 +13,8 @@
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +37,111 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body{
+  font-family: 'Stylish', sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #F5F5F5;
+}
+
+.title{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  padding-left : 45vw;
+}
+
+.grid1{
+  border: 1px solid #DCDCDC;
+  width : 38vw;
+  height : 38vh;
+  margin-left : 10vw;
+  margin-bottom : 5vh;
+}
+
+.grid2{
+  border: 1px solid #DCDCDC;
+  width : 38vw;
+  height : 38vh;
+  margin-right : 10vw;
+  margin-left : 4vw;
+  margin-bottom : 5vh;
+}
+
+.grid3{
+  border: 1px solid #DCDCDC;
+  width : 38vw;
+  height : 38vh;
+  margin-left : 10vw;
+}
+
+.grid4{
+  border: 1px solid #DCDCDC;
+  width : 38vw;
+  height : 38vh;
+  margin-right : 10vw;
+  margin-left : 4vw;
+}
+
+.gridContainer{
+  display: flex;
+}
+
+.currentIcon{
+  width: 3vw;
+  height: auto;
+}
+
+.forecastContainer{
+  display: flex;
+}
+
+.forecast{
+  margin-left: 7vw;
+}
+
+hr{
+  border: 0.1px solid #DCDCDC;
+}
+
+.currentText{
+  font-size: 25px;
+}
+
+.currentContainer{
+  display: flex;
+}
+
+.current{
+  margin-left:10vw;
+}
+
+.Movieimg{
+  height: 15vh;
+  width: auto;
+}
+
+.movieContainer{
+  display: flex;
+  justify-content: space-around;
+}
+
+.movieimgContainer{
+  display: flex;
+  justify-content: space-around;
+}
+
+.performanceImg{
+  height: 15vh;
+  width: auto;
+}
+
+.comments{
+  font-size: 20px;
 }
