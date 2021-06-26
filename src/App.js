@@ -19,10 +19,54 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Tour from './Tour.js';
+import './raining.js';
+import axios from 'axios';
 
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state= {desc:''}
+  }
+
+    componentDidMount(){
+      const url = 'http://api.openweathermap.org/data/2.5/forecast?id=1835847&appid=22dd2072f22f4aa7ec2101e5340c9a96&units=metric&lang=kr';
+
+      axios.get(url).then(responseData => {
+          console.log(responseData);
+          const data = responseData.data
+              this.setState({
+                  desc: data.list[0].weather[0].id,
+              });
+      })
+      .catch(error => console.log(error));
+    }
+
   render() {
+
+    let desc = this.state.desc;
+    let currentStatus = 'Main';
+
+    if((desc>=300 && desc<=302) || (desc>=310 && desc<=314) || desc == 321){
+      currentStatus = 'rainMain';
+  }
+  else if((desc>=500 && desc<=504) || desc == 511 || (desc>=520 && desc<=522) || desc == 531 || desc == 771){
+      currentStatus = 'rainMain';
+  }
+
+  else if((desc>=600 && desc<=602) || desc == 615 || (desc>=611 && desc<=613) || desc == 616 || (desc>=620 && desc<=622)){
+    currentStatus = 'snowMain';
+}
+else if(desc == 801 || desc == 802){
+  currentStatus = 'cloudyMain';
+}
+else if(desc == 803 || desc == 804){
+  currentStatus = 'cloudyMain';
+}
+else if(desc == 800){
+  currentStatus = 'sunnyMain';
+}
+
     const settings = {
       dots: true,
       fade: true,
@@ -34,7 +78,7 @@ class App extends Component {
       className: "slides"
     }
     return (
-      <div className="App">
+      <div className={currentStatus}>
 
         <div className="title">
           <p className="titleText">날씨 프로젝트</p>

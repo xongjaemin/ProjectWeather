@@ -74,6 +74,10 @@ class Comment extends Component{
                 descComment = '비가 내려요 🌧️';
                 recommend += 2;
             }
+            else if((desc>=600 && desc<=602) || desc == 615 || (desc>=611 && desc<=613) || desc == 616 || (desc>=620 && desc<=622)){
+                descComment = '눈이 내려요 ❄️';
+                recommend += 2;
+            }
             else if(desc == 800){
                 descComment = '맑아요 🌞';
             }
